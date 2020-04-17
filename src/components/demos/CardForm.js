@@ -58,6 +58,9 @@ const CardForm = () => {
           options={options}
           onReady={() => {
             console.log("CardElement [ready]");
+            if (window.Cypress) {
+              window.stripe = stripe
+            }
           }}
           onChange={event => {
             console.log("CardElement [change]", event);
